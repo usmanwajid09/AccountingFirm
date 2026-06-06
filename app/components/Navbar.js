@@ -137,6 +137,7 @@ export default function Navbar() {
           <Link
             href="/"
             ref={logoRef}
+            onClick={() => setIsOpen(false)}
             className="logo flex items-center shrink-0"
           >
             <img 
@@ -200,6 +201,7 @@ export default function Navbar() {
                       ) : (
                         <Link
                           href={link.href}
+                          onClick={() => setIsOpen(false)}
                           className="text-[28px] sm:text-[36px] lg:text-[48px] font-bold tracking-tight hover:text-ia-blue transition-colors"
                         >
                           {link.label}
@@ -214,6 +216,7 @@ export default function Navbar() {
                           <Link
                             key={sub.label}
                             href={sub.href}
+                            onClick={() => setIsOpen(false)}
                             className="text-[18px] sm:text-[20px] text-ia-text-light hover:text-ia-white transition-colors"
                           >
                             {sub.label}

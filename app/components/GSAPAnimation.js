@@ -195,8 +195,13 @@ export default function GSAPAnimation() {
 
     // 4. Word-splitting text reveals
     const splitHeaders = document.querySelectorAll(".gsap-split-header");
+    const originalHTMLs = [];
+
     splitHeaders.forEach((el) => {
       if (el.dataset.splitDone) return;
+      
+      // Save original innerHTML to restore on unmount
+      originalHTMLs.push({ el, html: el.innerHTML });
       el.dataset.splitDone = "true";
 
       const words = el.innerText.split(" ");
@@ -410,6 +415,13 @@ export default function GSAPAnimation() {
 
     // Cleanup triggers on unmount
     return () => {
+      // Restore original innerHTML to avoid React removeChild errors when components unmount
+      originalHTMLs.forEach(({ el, html }) => {
+        if (el) {
+          el.innerHTML = html;
+          delete el.dataset.splitDone;
+        }
+      });
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
       window.removeEventListener("resize", updateString);
     };

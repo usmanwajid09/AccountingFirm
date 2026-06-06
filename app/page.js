@@ -112,7 +112,7 @@ export default function Home() {
               
               {/* Giant Text Header with Split Class */}
               <div className="absolute -left-20 -top-20 w-[500px] h-[500px] bg-glow-teal pointer-events-none select-none z-0" />
-              <h1 className="text-[64px] sm:text-[96px] lg:text-[130px] xl:text-[150px] font-extrabold text-ia-white leading-[0.88] tracking-tighter max-w-[1000px] relative uppercase z-10">
+              <h1 className="text-[40px] sm:text-[80px] lg:text-[130px] xl:text-[150px] font-extrabold text-ia-white leading-[0.88] tracking-tighter max-w-[1000px] relative uppercase z-10">
                 Global{" "}
                 <span className="block text-ia-blue">
                   Accountants

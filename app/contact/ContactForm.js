@@ -5,6 +5,8 @@ import Button from "../components/Button";
 
 export default function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
   const [formData, setFormData] = useState({
     name: "",
     company: "",
@@ -14,10 +16,27 @@ export default function ContactForm() {
     message: "",
   });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Simulate API call
-    setSubmitted(true);
+    setLoading(true);
+    setError(null);
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+      const data = await response.json();
+      if (data.success) {
+        setSubmitted(true);
+      } else {
+        setError(data.error?.message || "Failed to send message. Please try again.");
+      }
+    } catch (err) {
+      setError("An unexpected error occurred. Please check your connection.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   if (submitted) {
@@ -145,10 +164,21 @@ export default function ContactForm() {
         />
       </div>
 
+      {error && (
+        <p className="text-[14px] text-red-400 text-center font-medium bg-red-950/20 border border-red-500/20 p-3 rounded-[4px]">
+          {error}
+        </p>
+      )}
+
       {/* Submit Button */}
       <div className="mt-2">
-        <Button type="submit" variant="primary" className="w-full justify-center">
-          Send Message
+        <Button 
+          type="submit" 
+          variant="primary" 
+          className="w-full justify-center"
+          disabled={loading}
+        >
+          {loading ? "Sending..." : "Send Message"}
         </Button>
       </div>
 

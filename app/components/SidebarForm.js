@@ -5,11 +5,31 @@ import Button from "./Button";
 
 export default function SidebarForm() {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
   const [formData, setFormData] = useState({ name: "", email: "", phone: "" });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+    setError(null);
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...formData, type: "callback" }),
+      });
+      const data = await response.json();
+      if (data.success) {
+        setSubmitted(true);
+      } else {
+        setError(data.error?.message || "Callback request failed.");
+      }
+    } catch (err) {
+      setError("An error occurred. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   if (submitted) {
@@ -78,8 +98,19 @@ export default function SidebarForm() {
           />
         </div>
 
-        <Button type="submit" variant="primary" className="w-full mt-2">
-          Request a Callback
+        {error && (
+          <p className="text-[13px] text-red-400 text-center font-medium bg-red-950/20 border border-red-500/20 p-2 rounded-sm">
+            {error}
+          </p>
+        )}
+
+        <Button 
+          type="submit" 
+          variant="primary" 
+          className="w-full mt-2"
+          disabled={loading}
+        >
+          {loading ? "Sending..." : "Request a Callback"}
         </Button>
       </form>
 

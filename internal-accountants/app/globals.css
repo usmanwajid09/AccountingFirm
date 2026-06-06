@@ -1,0 +1,165 @@
+@import "tailwindcss";
+
+:root {
+  --ia-white: #ffffff; /* White primary text/elements */
+  --ia-bg-light: #022225; /* Dark Teal panel background */
+  --ia-navy: #011618; /* Deep Teal canvas background */
+  --ia-navy-alt: #032e32; /* Lighter dark teal panels */
+  --ia-blue: #00f5d4; /* Neon mint/teal accent */
+  --ia-blue-dark: #00d1b4; /* Darker neon mint/teal */
+  --ia-blue-tint: rgba(0, 245, 212, 0.06);
+  --ia-purple: #c084fc; /* Electric purple accent */
+  --ia-purple-dark: #a855f7; /* Darker electric purple */
+  --ia-coral: #ff4a6b; /* Vibrant coral accent */
+  --ia-coral-dark: #e11d48; /* Darker coral/rose */
+  --ia-text-primary: #ffffff; /* White primary text */
+  --ia-text-secondary: #94b2b5; /* Teal-gray secondary text for high readability */
+  --ia-text-muted: #5e8488; /* Muted teal-gray placeholders */
+  --ia-text-light: #e6f7f8; /* Very light teal-white */
+  --ia-border: #053a3e; /* Dark teal border lines */
+  --ia-border-strong: #095960; /* Dark teal border strong lines */
+}
+
+@theme {
+  --color-ia-white: var(--ia-white);
+  --color-ia-bg-light: var(--ia-bg-light);
+  --color-ia-navy: var(--ia-navy);
+  --color-ia-navy-alt: var(--ia-navy-alt);
+  --color-ia-blue: var(--ia-blue);
+  --color-ia-blue-dark: var(--ia-blue-dark);
+  --color-ia-blue-tint: var(--ia-blue-tint);
+  --color-ia-purple: var(--ia-purple);
+  --color-ia-purple-dark: var(--ia-purple-dark);
+  --color-ia-coral: var(--ia-coral);
+  --color-ia-coral-dark: var(--ia-coral-dark);
+  --color-ia-text-primary: var(--ia-text-primary);
+  --color-ia-text-secondary: var(--ia-text-secondary);
+  --color-ia-text-muted: var(--ia-text-muted);
+  --color-ia-text-light: var(--ia-text-light);
+  --color-ia-border: var(--ia-border);
+  --color-ia-border-strong: var(--ia-border-strong);
+
+  --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-primary: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-display: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  --font-size-xxs: 11.5px;
+  --font-size-xs: 12px;
+  --font-size-sm: 13px;
+  --font-size-base: 14px;
+  --font-size-lg: 1.5rem;
+  --font-size-xl: 1.75rem;
+
+  --animate-fade-up: fade-up 0.5s ease-out forwards;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================
+   GLOBAL TYPOGRAPHY RESETS & ELEMENTS
+   ========================================== */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans) !important;
+  color: var(--ia-text-primary);
+  background-color: var(--ia-navy);
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url('/images/wall_texture.jpg');
+  background-repeat: repeat;
+  background-size: 600px;
+  opacity: 0.035;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  z-index: 1;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-sans) !important;
+}
+
+button, input, select, textarea, a {
+  font-family: var(--font-sans) !important;
+}
+
+/* Scroll reveal utility */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.scroll-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Accessibility focus state */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--ia-blue);
+  outline-offset: 2px;
+}
+
+/* Cyber-dark theme overrides for bg-ia-white classes */
+.bg-ia-white {
+  background-color: var(--ia-navy-alt) !important;
+}
+
+/* Radial Glow Overlays */
+.bg-glow-purple {
+  background: radial-gradient(circle at center, rgba(192, 132, 252, 0.08) 0%, rgba(0,0,0,0) 70%);
+}
+.bg-glow-teal {
+  background: radial-gradient(circle at center, rgba(0, 245, 212, 0.08) 0%, rgba(0,0,0,0) 70%);
+}
+.bg-glow-coral {
+  background: radial-gradient(circle at center, rgba(255, 74, 107, 0.07) 0%, rgba(0,0,0,0) 70%);
+}
+
+/* Hover glowing border animations */
+.glow-card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.glow-card-hover:hover {
+  border-color: rgba(0, 245, 212, 0.3) !important;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.8), 0 0 20px 2px rgba(0, 245, 212, 0.08) !important;
+}
+
+.glow-card-purple-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.glow-card-purple-hover:hover {
+  border-color: rgba(192, 132, 252, 0.3) !important;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.8), 0 0 20px 2px rgba(192, 132, 252, 0.08) !important;
+}
+
+.glow-card-coral-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.glow-card-coral-hover:hover {
+  border-color: rgba(255, 74, 107, 0.3) !important;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.8), 0 0 20px 2px rgba(255, 74, 107, 0.08) !important;
+}
+

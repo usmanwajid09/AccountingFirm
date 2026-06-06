@@ -1,0 +1,15 @@
+# OS generated files
+Data.lnk
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Node/Next.js subfolder ignores (handled locally, but added for safety)
+internal-accountants/node_modules/
+internal-accountants/.next/
+internal-accountants/out/
+internal-accountants/build/
+
+# Local logs
+*.log

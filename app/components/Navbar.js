@@ -117,6 +117,11 @@ export default function Navbar() {
         { label: "Bookkeeping", href: "/services/bookkeeping-services" },
         { label: "Management Reporting", href: "/services/management-reporting" },
         { label: "Budgeting & Financial Planning", href: "/services/budgeting-financial-planning" },
+        { label: "Annual Accounts", href: "/services" },
+        { label: "Self Assessments", href: "/services" },
+        { label: "Cashflows", href: "/services" },
+        { label: "Tax Advisory", href: "/services" },
+        { label: "HMRC Investigations", href: "/services" },
       ],
     },
     {
@@ -260,20 +265,18 @@ export default function Navbar() {
                   <div>
                     <h4 className="font-bold text-ia-white">London Office</h4>
                     <p>Central London</p>
-                    <div className="flex items-center gap-3 mt-1.5">
+                    <div className="flex items-center gap-2 mt-1.5">
                       <a 
                         href="https://wa.me/447828762984" 
                         target="_blank" 
                         rel="noopener noreferrer" 
-                        className="text-[#25D366] hover:text-[#128C7E] flex items-center transition-colors"
+                        className="text-[#25D366] hover:text-[#128C7E] flex items-center gap-2 transition-colors"
                         aria-label="WhatsApp"
                       >
-                        <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                        <svg className="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24">
                           <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.665.989 3.3 1.488 5.35 1.489 5.503 0 9.979-4.477 9.982-9.983.001-2.667-1.036-5.176-2.92-7.062C17.17 1.71 14.665.673 12.003.673 6.5 0.673 2.023 5.15 2.02 10.656c-.001 2.054.499 3.69 1.493 5.358L2.53 21.45l5.117-1.341zM17.65 14.86c-.3-.15-1.78-.88-2.05-.98-.27-.1-.47-.15-.67.15-.2.3-.77.98-.95 1.18-.18.2-.35.23-.65.08-.3-.15-1.29-.48-2.45-1.52-.9-0.8-1.51-1.79-1.69-2.09-.18-.3-.02-.46.13-.61.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.02-.53-.08-.15-.67-1.62-.92-2.22-.25-.6-.5-.52-.67-.53H8.3c-.2 0-.53.07-.8.38-.28.3-1.07 1.05-1.07 2.56s1.09 2.97 1.24 3.17c.15.2 2.15 3.28 5.21 4.6 0.73.31 1.3.5 1.74.64.73.23 1.39.2 1.92.12.59-.09 1.78-.73 2.03-1.43.25-.7.25-1.29.18-1.43-.07-.15-.27-.23-.57-.38z" />
                         </svg>
-                      </a>
-                      <a href="tel:+447828762984" className="text-ia-blue hover:underline block">
-                        +44 782 876 2984
+                        <span className="hover:underline text-ia-text-light font-light">+44 782 876 2984</span>
                       </a>
                     </div>
                   </div>

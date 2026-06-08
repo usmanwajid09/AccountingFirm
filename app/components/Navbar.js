@@ -129,10 +129,10 @@ export default function Navbar() {
   const handleSubLinkClick = (e, href) => {
     e.preventDefault();
     setIsOpen(false);
-    // Small delay to let close animation start, then navigate
+    // Wait for the close animation (500ms) to nearly finish before navigating
     setTimeout(() => {
       router.push(href);
-    }, 100);
+    }, 450);
   };
 
   // Check if a sub-item is the currently active page
@@ -274,7 +274,7 @@ export default function Navbar() {
                       ) : (
                         <Link
                           href={link.href}
-                          onClick={() => setIsOpen(false)}
+                          onClick={(e) => handleSubLinkClick(e, link.href)}
                           className={`text-[24px] sm:text-[32px] lg:text-[40px] xl:text-[48px] font-bold tracking-tight hover:text-ia-blue transition-colors ${
                             pathname === link.href ? "text-ia-blue" : ""
                           }`}

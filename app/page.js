@@ -44,21 +44,53 @@ export default function Home() {
       title: "Limited Companies",
       desc: "Comprehensive corporate accounting, sales tax filings, global corporate tax planning, and statutory financial compliance structured for growing SMEs.",
       icon: <BriefcaseIcon />,
+      accent: "ia-blue",
+      glowClass: "glow-card-hover",
+      borderDefault: "border-ia-blue/10",
+      textAccent: "text-ia-blue",
+      hoverText: "group-hover/card:text-ia-blue",
+      bgIcon: "bg-ia-blue-tint border-ia-blue/20 text-ia-blue",
+      hoverBgIcon: "group-hover/card:bg-ia-blue group-hover/card:text-ia-navy group-hover/card:shadow-[0_0_15px_rgba(0,245,212,0.4)]",
+      topBar: "from-transparent via-ia-blue to-transparent",
     },
     {
       title: "Sole Traders & Freelancers",
       desc: "Hassle-free personal tax compliance, self-assessments, digital nomad cross-border tax advice, and fixed-fee bookkeeping designed for independent contractors.",
       icon: <UserIcon />,
+      accent: "ia-purple",
+      glowClass: "glow-card-purple-hover",
+      borderDefault: "border-ia-purple/10",
+      textAccent: "text-ia-purple",
+      hoverText: "group-hover/card:text-ia-purple",
+      bgIcon: "bg-ia-purple/5 border-ia-purple/20 text-ia-purple",
+      hoverBgIcon: "group-hover/card:bg-ia-purple group-hover/card:text-ia-navy group-hover/card:shadow-[0_0_15px_rgba(192,132,252,0.4)]",
+      topBar: "from-transparent via-ia-purple to-transparent",
     },
     {
       title: "Partnerships & LLPs",
       desc: "Accurate management of partner tax distributions, capital accounts, joint venture audits, and statutory filings for collaborative enterprises.",
       icon: <HandshakeIcon />,
+      accent: "ia-coral",
+      glowClass: "glow-card-coral-hover",
+      borderDefault: "border-ia-coral/10",
+      textAccent: "text-ia-coral",
+      hoverText: "group-hover/card:text-ia-coral",
+      bgIcon: "bg-ia-coral/5 border-ia-coral/20 text-ia-coral",
+      hoverBgIcon: "group-hover/card:bg-ia-coral group-hover/card:text-ia-navy group-hover/card:shadow-[0_0_15px_rgba(255,74,107,0.4)]",
+      topBar: "from-transparent via-ia-coral to-transparent",
     },
     {
       title: "Growth Startups",
       desc: "Multi-currency financial dashboard reporting, venture backing cost target metrics, cash runway modeling, and strategic budgeting for scaling startups.",
       icon: <RocketIcon />,
+      accent: "ia-blue",
+      glowClass: "glow-card-hover",
+      borderDefault: "border-ia-blue/10",
+      textAccent: "text-ia-blue",
+      hoverText: "group-hover/card:text-ia-blue",
+      bgIcon: "bg-ia-blue-tint border-ia-blue/20 text-ia-blue",
+      hoverBgIcon: "group-hover/card:bg-ia-blue group-hover/card:text-ia-navy group-hover/card:shadow-[0_0_15px_rgba(0,245,212,0.4)]",
+      topBar: "from-transparent via-ia-blue to-transparent",
     },
   ];
 
@@ -280,22 +312,25 @@ export default function Home() {
               <motion.div
                 key={idx}
                 variants={cardVariants}
-                whileHover={{ y: -6, scale: 1.02 }}
-                className="relative overflow-hidden bg-ia-navy-alt border border-ia-border rounded-md p-8 shadow-card glow-card-hover transition-all duration-300 flex flex-col h-full text-left group/card"
+                whileHover={{ y: -8, scale: 1.015 }}
+                className={`relative overflow-hidden bg-gradient-to-br from-ia-bg-light/95 via-ia-navy-alt/75 to-ia-bg-light/50 backdrop-blur-md border ${item.borderDefault} ${item.glowClass} rounded-md p-8 shadow-card transition-all duration-300 flex flex-col h-full text-left group/card`}
               >
+                {/* Glowing Top Bar Accent */}
+                <div className={`absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r ${item.topBar} opacity-40 group-hover/card:opacity-100 transition-opacity duration-300`} />
+
                 {/* Card outline watermark */}
-                <div className="absolute -right-8 -bottom-8 w-36 h-36 opacity-[0.02] pointer-events-none transition-all duration-700 ease-out group-hover/card:scale-120 group-hover/card:rotate-12 group-hover/card:opacity-[0.05] z-0 select-none">
+                <div className="absolute -right-8 -bottom-8 w-36 h-36 opacity-[0.015] pointer-events-none transition-all duration-700 ease-out group-hover/card:scale-120 group-hover/card:rotate-12 group-hover/card:opacity-[0.06] z-0 select-none">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={`/images/test_shape_nature_${idx % 4}.png`} alt="" className="w-full h-full object-contain" />
                 </div>
 
                 <div className="relative z-10 flex flex-col flex-grow">
-                  {/* Hexagon icon container */}
-                  <div className="w-12 h-12 rounded-lg bg-ia-blue-tint border border-ia-blue/20 flex items-center justify-center text-ia-blue mb-6">
+                  {/* Glowing icon container */}
+                  <div className={`w-12 h-12 rounded-lg border flex items-center justify-center mb-6 transition-all duration-300 ${item.bgIcon} ${item.hoverBgIcon}`}>
                     {item.icon}
                   </div>
 
-                  <h3 className="text-[20px] font-bold text-white leading-snug mb-3">
+                  <h3 className={`text-[21px] font-bold text-white leading-snug mb-3 transition-colors duration-300 ${item.hoverText}`}>
                     {item.title}
                   </h3>
                   <p className="text-[14px] text-ia-text-secondary font-light mb-6 flex-grow leading-relaxed">
@@ -304,9 +339,9 @@ export default function Home() {
                   <div className="mt-auto">
                     <Link 
                       href="/contact" 
-                      className="group text-[14px] font-bold text-ia-blue hover:text-ia-blue-dark inline-flex items-center gap-1 hover:underline"
+                      className={`group text-[14px] font-bold ${item.textAccent} inline-flex items-center gap-1.5 transition-all duration-200`}
                     >
-                      Get Started <span className="transition-transform duration-200 group-hover:translate-x-0.5 inline-block">&rarr;</span>
+                      Get Started <span className="transition-transform duration-200 group-hover/card:translate-x-1 inline-block">&rarr;</span>
                     </Link>
                   </div>
                 </div>

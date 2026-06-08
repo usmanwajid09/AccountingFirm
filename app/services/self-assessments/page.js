@@ -1,6 +1,8 @@
 import PageHero from "../../components/PageHero";
 import SidebarForm from "../../components/SidebarForm";
 import ServiceCard from "../../components/ServiceCard";
+import SectionLabel from "../../components/SectionLabel";
+import DividendTaxCalculator from "../../components/DividendTaxCalculator";
 import CTABanner from "../../components/CTABanner";
 import ScrollReveal from "../../components/ScrollReveal";
 
@@ -83,6 +85,21 @@ export default function SelfAssessments() {
             </div>
 
           </div>
+        </div>
+      </section>
+
+      {/* Interactive Calculator Section */}
+      <section className="bg-ia-bg-light py-24 border-t border-b border-ia-border">
+        <div className="container max-w-[1200px] mx-auto px-6">
+          <div className="section-header text-center max-w-[700px] mx-auto mb-16 reveal">
+            <SectionLabel>Interactive Tool</SectionLabel>
+            <h2 className="text-[32px] md:text-[36px] font-bold text-white tracking-tight">
+              Dividend Tax Calculator
+            </h2>
+          </div>
+          <ScrollReveal>
+            <DividendTaxCalculator />
+          </ScrollReveal>
         </div>
       </section>
 

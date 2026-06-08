@@ -1,6 +1,8 @@
 import PageHero from "../../components/PageHero";
 import SidebarForm from "../../components/SidebarForm";
 import ServiceCard from "../../components/ServiceCard";
+import SectionLabel from "../../components/SectionLabel";
+import BookkeepingROICalculator from "../../components/BookkeepingROICalculator";
 import CTABanner from "../../components/CTABanner";
 import ScrollReveal from "../../components/ScrollReveal";
 
@@ -104,6 +106,21 @@ export default function BookkeepingServices() {
             </div>
 
           </div>
+        </div>
+      </section>
+
+      {/* Interactive Calculator Section */}
+      <section className="bg-ia-bg-light py-24 border-t border-b border-ia-border">
+        <div className="container max-w-[1200px] mx-auto px-6">
+          <div className="section-header text-center max-w-[700px] mx-auto mb-16 reveal">
+            <SectionLabel>Interactive Tool</SectionLabel>
+            <h2 className="text-[32px] md:text-[36px] font-bold text-white tracking-tight">
+              Bookkeeping Value & Savings Calculator
+            </h2>
+          </div>
+          <ScrollReveal>
+            <BookkeepingROICalculator />
+          </ScrollReveal>
         </div>
       </section>
 

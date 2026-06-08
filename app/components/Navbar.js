@@ -251,9 +251,6 @@ export default function Navbar() {
                     <h4 className="font-bold text-ia-white">London Office</h4>
                     <p>Central London</p>
                     <div className="flex items-center gap-3 mt-1.5">
-                      <a href="tel:+447828762984" className="text-ia-blue hover:underline block">
-                        +44 782 876 2984
-                      </a>
                       <a 
                         href="https://wa.me/447828762984" 
                         target="_blank" 
@@ -265,31 +262,10 @@ export default function Navbar() {
                           <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.665.989 3.3 1.488 5.35 1.489 5.503 0 9.979-4.477 9.982-9.983.001-2.667-1.036-5.176-2.92-7.062C17.17 1.71 14.665.673 12.003.673 6.5 0.673 2.023 5.15 2.02 10.656c-.001 2.054.499 3.69 1.493 5.358L2.53 21.45l5.117-1.341zM17.65 14.86c-.3-.15-1.78-.88-2.05-.98-.27-.1-.47-.15-.67.15-.2.3-.77.98-.95 1.18-.18.2-.35.23-.65.08-.3-.15-1.29-.48-2.45-1.52-.9-0.8-1.51-1.79-1.69-2.09-.18-.3-.02-.46.13-.61.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.02-.53-.08-.15-.67-1.62-.92-2.22-.25-.6-.5-.52-.67-.53H8.3c-.2 0-.53.07-.8.38-.28.3-1.07 1.05-1.07 2.56s1.09 2.97 1.24 3.17c.15.2 2.15 3.28 5.21 4.6 0.73.31 1.3.5 1.74.64.73.23 1.39.2 1.92.12.59-.09 1.78-.73 2.03-1.43.25-.7.25-1.29.18-1.43-.07-.15-.27-.23-.57-.38z" />
                         </svg>
                       </a>
+                      <a href="tel:+447828762984" className="text-ia-blue hover:underline block">
+                        +44 782 876 2984
+                      </a>
                     </div>
-                  </div>
-                </div>
-
-                {/* East Anglia */}
-                <div className="flex gap-4">
-                  <MapPin className="w-5 h-5 text-ia-blue shrink-0 mt-0.5" />
-                  <div>
-                    <h4 className="font-bold text-ia-white">East Anglia Office</h4>
-                    <p>19c Diss Business Park, Diss, IP22 4GT</p>
-                    <a href="tel:01379213790" className="text-ia-blue hover:underline block mt-1">
-                      01379 213 790
-                    </a>
-                  </div>
-                </div>
-
-                {/* Birmingham */}
-                <div className="flex gap-4">
-                  <MapPin className="w-5 h-5 text-ia-blue shrink-0 mt-0.5" />
-                  <div>
-                    <h4 className="font-bold text-ia-white">Birmingham Office</h4>
-                    <p>126 Colmore Row, Birmingham, B3 3AP</p>
-                    <a href="tel:03334443350" className="text-ia-blue hover:underline block mt-1">
-                      0333 444 3350
-                    </a>
                   </div>
                 </div>
               </div>

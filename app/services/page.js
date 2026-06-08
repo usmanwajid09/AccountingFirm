@@ -84,7 +84,7 @@ export default function Services() {
         <div className="container max-w-[1200px] mx-auto px-6 md:px-12">
           <div className="section-header text-left gsap-reveal mb-16">
             <SectionLabel>What We Do</SectionLabel>
-            <h2 className="gsap-split-header text-[32px] md:text-[36px] font-bold text-white tracking-tight">
+            <h2 className="gsap-reveal text-[32px] md:text-[36px] font-bold text-white tracking-tight">
               Comprehensive Financial Oversight
             </h2>
           </div>

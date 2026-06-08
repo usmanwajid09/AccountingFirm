@@ -109,17 +109,9 @@ export default function Navbar() {
         { label: "Our Process", href: "/about#process" },
       ],
     },
-    {
-      label: "Services",
-      href: "/services",
-      subItems: [
-        { label: "Overview", href: "/services" },
-        { label: "Bookkeeping", href: "/services/bookkeeping-services" },
-        { label: "Management Reporting", href: "/services/management-reporting" },
-        { label: "Budgeting & Financial Planning", href: "/services/budgeting-financial-planning" },
-      ],
-    },
-    { label: "Blog", href: "/blog" },
+    { label: "Bookkeeping", href: "/services/bookkeeping-services" },
+    { label: "Management Reporting", href: "/services/management-reporting" },
+    { label: "Budgeting & Financial Planning", href: "/services/budgeting-financial-planning" },
     { label: "Contact Us", href: "/contact" },
   ];
 

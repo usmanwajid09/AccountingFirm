@@ -67,7 +67,7 @@ export default function About() {
             {/* Story Text (55% / 7 cols) */}
             <div className="lg:col-span-7 gsap-reveal">
               <SectionLabel>Our Story</SectionLabel>
-              <h2 className="gsap-split-header text-[32px] md:text-[36px] font-bold text-white mb-6 tracking-tight leading-tight">
+              <h2 className="gsap-reveal text-[32px] md:text-[36px] font-bold text-white mb-6 tracking-tight leading-tight">
                 A Firm Founded on Financial Integrity
               </h2>
               <div className="text-[16px] text-ia-text-secondary font-normal space-y-6 leading-relaxed">

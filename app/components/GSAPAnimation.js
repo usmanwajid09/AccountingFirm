@@ -193,42 +193,7 @@ export default function GSAPAnimation() {
       });
     }
 
-    // 4. Word-splitting text reveals
-    const splitHeaders = document.querySelectorAll(".gsap-split-header");
-    const originalHTMLs = [];
 
-    splitHeaders.forEach((el) => {
-      if (el.dataset.splitDone) return;
-      
-      // Save original innerHTML to restore on unmount
-      originalHTMLs.push({ el, html: el.innerHTML });
-      el.dataset.splitDone = "true";
-
-      const words = el.innerText.split(" ");
-      el.innerHTML = words
-        .map(
-          (word) =>
-            `<span class="inline-block overflow-hidden vertical-align-top mr-[0.25em] pb-[0.05em]">` +
-            `<span class="gsap-word inline-block translate-y-[110%] font-bold">` +
-            `${word}` +
-            `</span>` +
-            `</span>`
-        )
-        .join("");
-
-      const wordSpans = el.querySelectorAll(".gsap-word");
-      gsap.to(wordSpans, {
-        y: "0%",
-        duration: 0.8,
-        stagger: 0.04,
-        ease: "power4.out",
-        scrollTrigger: {
-          trigger: el,
-          start: "top 90%",
-          toggleActions: "play none none none",
-        },
-      });
-    });
 
     // 5. Generic block reveals
     const reveals = document.querySelectorAll(".gsap-reveal");
@@ -415,13 +380,6 @@ export default function GSAPAnimation() {
 
     // Cleanup triggers on unmount
     return () => {
-      // Restore original innerHTML to avoid React removeChild errors when components unmount
-      originalHTMLs.forEach(({ el, html }) => {
-        if (el) {
-          el.innerHTML = html;
-          delete el.dataset.splitDone;
-        }
-      });
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
       window.removeEventListener("resize", updateString);
     };

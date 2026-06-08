@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { Menu, X, ChevronDown, Phone, Mail, MapPin } from "lucide-react";
 import Button from "./Button";
 import { gsap } from "gsap";
@@ -10,8 +10,9 @@ import { gsap } from "gsap";
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-  const [activeSubMenu, setActiveSubMenu] = useState(null); // 'about' or 'services'
+  const [activeSubMenu, setActiveSubMenu] = useState(null);
   const pathname = usePathname();
+  const router = useRouter();
 
   const overlayRef = useRef(null);
   const menuLinksRef = useRef([]);
@@ -32,16 +33,39 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Close menu helper - kills GSAP tweens and force-hides overlay
+  const closeMenu = useCallback(() => {
+    if (!isOpen) return;
+    setIsOpen(false);
+  }, [isOpen]);
+
   // Close overlay on route change
   useEffect(() => {
     setIsOpen(false);
+    setActiveSubMenu(null);
   }, [pathname]);
+
+  // When menu opens, auto-expand the section matching current path
+  useEffect(() => {
+    if (isOpen) {
+      if (pathname.startsWith("/services")) {
+        setActiveSubMenu("services");
+      } else if (pathname.startsWith("/about")) {
+        setActiveSubMenu("about us");
+      } else if (pathname.startsWith("/who-we-help")) {
+        setActiveSubMenu("who we help");
+      }
+    }
+  }, [isOpen, pathname]);
 
   // GSAP animation triggers when menu opens/closes
   useEffect(() => {
     if (isOpen) {
       // Prevent body scrolling when menu is open
       document.body.style.overflow = "hidden";
+
+      // Kill any running tweens first
+      gsap.killTweensOf(overlayRef.current);
 
       // Animation: Slide down overlay
       gsap.to(overlayRef.current, {
@@ -80,6 +104,9 @@ export default function Navbar() {
     } else {
       document.body.style.overflow = "";
 
+      // Kill any running tweens first
+      gsap.killTweensOf(overlayRef.current);
+
       // Animation: Slide up and hide overlay
       gsap.to(overlayRef.current, {
         y: "-100%",
@@ -96,6 +123,31 @@ export default function Navbar() {
     } else {
       setActiveSubMenu(menu);
     }
+  };
+
+  // Navigate to a sub-item and close menu
+  const handleSubLinkClick = (e, href) => {
+    e.preventDefault();
+    setIsOpen(false);
+    // Small delay to let close animation start, then navigate
+    setTimeout(() => {
+      router.push(href);
+    }, 100);
+  };
+
+  // Check if a sub-item is the currently active page
+  const isActiveSub = (href) => {
+    // For hash links like /about#story, compare just the pathname part
+    const subPath = href.split("#")[0];
+    return pathname === subPath;
+  };
+
+  // Check if a top-level nav section contains the active page
+  const isSectionActive = (link) => {
+    if (!link.subItems) {
+      return pathname === link.href;
+    }
+    return link.subItems.some((sub) => isActiveSub(sub.href));
   };
 
   const navLinks = [
@@ -196,6 +248,7 @@ export default function Navbar() {
               {navLinks.map((link, idx) => {
                 const hasSubItems = !!link.subItems;
                 const isSubActive = activeSubMenu === link.label.toLowerCase();
+                const sectionActive = isSectionActive(link);
 
                 return (
                   <div
@@ -207,7 +260,9 @@ export default function Navbar() {
                       {hasSubItems ? (
                         <button
                           onClick={() => toggleSubMenu(link.label.toLowerCase())}
-                          className="text-[24px] sm:text-[32px] lg:text-[40px] xl:text-[48px] font-bold tracking-tight hover:text-ia-blue transition-colors cursor-pointer text-left flex items-center gap-3"
+                          className={`text-[24px] sm:text-[32px] lg:text-[40px] xl:text-[48px] font-bold tracking-tight hover:text-ia-blue transition-colors cursor-pointer text-left flex items-center gap-3 ${
+                            sectionActive ? "text-ia-blue" : ""
+                          }`}
                         >
                           {link.label}
                           <ChevronDown
@@ -220,7 +275,9 @@ export default function Navbar() {
                         <Link
                           href={link.href}
                           onClick={() => setIsOpen(false)}
-                          className="text-[24px] sm:text-[32px] lg:text-[40px] xl:text-[48px] font-bold tracking-tight hover:text-ia-blue transition-colors"
+                          className={`text-[24px] sm:text-[32px] lg:text-[40px] xl:text-[48px] font-bold tracking-tight hover:text-ia-blue transition-colors ${
+                            pathname === link.href ? "text-ia-blue" : ""
+                          }`}
                         >
                           {link.label}
                         </Link>
@@ -230,16 +287,23 @@ export default function Navbar() {
                     {/* Submenu Slide-Down */}
                     {hasSubItems && isSubActive && (
                       <div className="pl-6 mt-4 flex flex-col gap-3 border-l-2 border-ia-blue/40 transition-all duration-300">
-                        {link.subItems.map((sub) => (
-                          <Link
-                            key={sub.label}
-                            href={sub.href}
-                            onClick={() => setIsOpen(false)}
-                            className="text-[18px] sm:text-[20px] text-ia-text-light hover:text-ia-white transition-colors"
-                          >
-                            {sub.label}
-                          </Link>
-                        ))}
+                        {link.subItems.map((sub) => {
+                          const active = isActiveSub(sub.href);
+                          return (
+                            <Link
+                              key={sub.label}
+                              href={sub.href}
+                              onClick={(e) => handleSubLinkClick(e, sub.href)}
+                              className={`text-[18px] sm:text-[20px] transition-colors ${
+                                active
+                                  ? "text-ia-white font-semibold border border-ia-blue/60 px-4 py-1.5 rounded-sm bg-ia-blue/10 inline-block w-fit"
+                                  : "text-ia-text-light hover:text-ia-white"
+                              }`}
+                            >
+                              {sub.label}
+                            </Link>
+                          );
+                        })}
                       </div>
                     )}
                   </div>

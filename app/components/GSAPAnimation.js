@@ -3,37 +3,19 @@
 import { useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { usePathname } from "next/navigation";
 
 export default function GSAPAnimation() {
+  const pathname = usePathname();
+
   useEffect(() => {
     // Register ScrollTrigger plugin
     gsap.registerPlugin(ScrollTrigger);
 
-    // 1. Hero Title Slide-Ins
-    const internalText = document.querySelector(".hero-internal");
-    const accountantsText = document.querySelector(".hero-accountants");
-    
-    if (internalText) {
-      gsap.fromTo(
-        internalText,
-        { x: -150, opacity: 0 },
-        { x: 0, opacity: 1, duration: 1.2, ease: "power4.out", delay: 0.2 }
-      );
-    }
-    
-    if (accountantsText) {
-      gsap.fromTo(
-        accountantsText,
-        { x: 150, opacity: 0 },
-        { x: 0, opacity: 1, duration: 1.2, ease: "power4.out", delay: 0.2 }
-      );
-    }
-
     // Helper to update the hanging string SVG coordinates
-    const string = document.getElementById("hanging-string");
-    const airplane = document.querySelector(".paper-airplane");
-    
     const updateString = () => {
+      const string = document.getElementById("hanging-string");
+      const airplane = document.querySelector(".paper-airplane");
       if (string && airplane) {
         const x = gsap.getProperty(airplane, "x");
         const y = gsap.getProperty(airplane, "y");
@@ -60,6 +42,33 @@ export default function GSAPAnimation() {
 
     // Add resize listener to update string on window resize
     window.addEventListener("resize", updateString);
+
+    const timer = setTimeout(() => {
+      // Refresh ScrollTrigger to find new DOM nodes
+      ScrollTrigger.refresh();
+
+      // 1. Hero Title Slide-Ins
+      const internalText = document.querySelector(".hero-internal");
+      const accountantsText = document.querySelector(".hero-accountants");
+      
+      if (internalText) {
+        gsap.fromTo(
+          internalText,
+          { x: -150, opacity: 0 },
+          { x: 0, opacity: 1, duration: 1.2, ease: "power4.out", delay: 0.2 }
+        );
+      }
+      
+      if (accountantsText) {
+        gsap.fromTo(
+          accountantsText,
+          { x: 150, opacity: 0 },
+          { x: 0, opacity: 1, duration: 1.2, ease: "power4.out", delay: 0.2 }
+        );
+      }
+
+      const string = document.getElementById("hanging-string");
+      const airplane = document.querySelector(".paper-airplane");
 
     // 2. Paper Airplane Swoop Flight Path & Constant Hovering Loop
     if (airplane) {
@@ -378,12 +387,18 @@ export default function GSAPAnimation() {
       );
     }
 
-    // Cleanup triggers on unmount
+      // Refresh ScrollTrigger again after all elements are bound
+      ScrollTrigger.refresh();
+    }, 100);
+
+    // Cleanup triggers on unmount/pathname change
     return () => {
+      clearTimeout(timer);
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+      gsap.killTweensOf("*");
       window.removeEventListener("resize", updateString);
     };
-  }, []);
+  }, [pathname]);
 
   return null;
 }

@@ -19,23 +19,22 @@ export default function PageHero({ eyebrow, title, sub, breadcrumbs = [] }) {
       />
 
       <div className="container relative z-10 w-full mx-auto px-6 md:px-12">
-        {/* Breadcrumbs */}
-        <div className="absolute top-[-70px] left-0 right-0 flex justify-center items-center gap-2 text-[13px] text-ia-text-secondary">
-          <Link href="/" className="hover:text-ia-white transition-colors">Home</Link>
-          {breadcrumbs.map((crumb, idx) => (
-            <span key={idx} className="flex items-center gap-2">
-              <span>&gt;</span>
-              {crumb.href ? (
-                <Link href={crumb.href} className="hover:text-ia-white transition-colors">{crumb.label}</Link>
-              ) : (
-                <span className="text-ia-text-light">{crumb.label}</span>
-              )}
-            </span>
-          ))}
-        </div>
-
         {/* Content */}
-        <div className="max-w-[800px] text-center mx-auto pt-8">
+        <div className="max-w-[800px] text-center mx-auto pt-4">
+          {/* Breadcrumbs */}
+          <div className="flex justify-center items-center gap-2 text-[13px] text-ia-text-secondary mb-6">
+            <Link href="/" className="hover:text-ia-white transition-colors">Home</Link>
+            {breadcrumbs.map((crumb, idx) => (
+              <span key={idx} className="flex items-center gap-2">
+                <span>&gt;</span>
+                {crumb.href ? (
+                  <Link href={crumb.href} className="hover:text-ia-white transition-colors">{crumb.label}</Link>
+                ) : (
+                  <span className="text-ia-text-light">{crumb.label}</span>
+                )}
+              </span>
+            ))}
+          </div>
           {eyebrow && (
             <span className="block text-[12px] font-bold text-ia-blue tracking-[0.12em] uppercase mb-4">
               {eyebrow}

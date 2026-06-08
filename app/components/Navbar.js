@@ -109,9 +109,27 @@ export default function Navbar() {
         { label: "Our Process", href: "/about#process" },
       ],
     },
-    { label: "Bookkeeping", href: "/services/bookkeeping-services" },
-    { label: "Management Reporting", href: "/services/management-reporting" },
-    { label: "Budgeting & Financial Planning", href: "/services/budgeting-financial-planning" },
+    {
+      label: "Services",
+      href: "/services",
+      subItems: [
+        { label: "Overview", href: "/services" },
+        { label: "Bookkeeping", href: "/services/bookkeeping-services" },
+        { label: "Management Reporting", href: "/services/management-reporting" },
+        { label: "Budgeting & Financial Planning", href: "/services/budgeting-financial-planning" },
+      ],
+    },
+    {
+      label: "Who We Help",
+      href: "/who-we-help",
+      subItems: [
+        { label: "Overview", href: "/who-we-help" },
+        { label: "Limited Companies", href: "/who-we-help/limited-companies" },
+        { label: "Sole Traders", href: "/who-we-help/sole-trader-accounting" },
+        { label: "Partnerships & LLPs", href: "/who-we-help/partnerships-and-llps" },
+        { label: "Contractors & Freelancers", href: "/who-we-help/contractors-and-freelancers" },
+      ],
+    },
     { label: "Contact Us", href: "/contact" },
   ];
 
@@ -137,7 +155,7 @@ export default function Navbar() {
               alt="internal accountants logo" 
               className="h-[40px] w-auto object-contain" 
             />
-            <span className="font-bold text-[18px] sm:text-[20px] tracking-wider uppercase text-current font-primary">
+            <span className="font-bold text-[18px] sm:text-[20px] tracking-wider uppercase text-current font-primary hidden sm:inline-block">
               Internal Accountants
             </span>
           </Link>
@@ -159,16 +177,16 @@ export default function Navbar() {
       {/* Full Screen Slide-Down Overlay */}
       <div
         ref={overlayRef}
-        className="fixed inset-0 w-full h-full bg-ia-navy-alt text-ia-white z-40 flex items-center justify-center pointer-events-none opacity-0 select-none overflow-y-auto"
+        className="fixed inset-0 w-full h-full bg-ia-navy-alt text-ia-white z-40 flex items-start lg:items-center justify-center pointer-events-none opacity-0 select-none overflow-y-auto"
         style={{
           transform: "translateY(-100%)",
           pointerEvents: isOpen ? "auto" : "none",
           select: isOpen ? "auto" : "none",
         }}
       >
-        <div className="container max-w-[1200px] mx-auto px-6 md:px-12 py-24 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full">
-          {/* Left Column: Navigation Links (7 columns) */}
-          <div className="lg:col-span-7 flex flex-col text-left justify-center">
+        <div className="container max-w-[1300px] mx-auto px-6 md:px-12 py-16 lg:py-24 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start lg:items-center w-full">
+          {/* Left Column: Navigation Links (8 columns) */}
+          <div className="lg:col-span-8 flex flex-col text-left justify-center">
             <nav className="flex flex-col gap-6 md:gap-8">
               {navLinks.map((link, idx) => {
                 const hasSubItems = !!link.subItems;
@@ -184,7 +202,7 @@ export default function Navbar() {
                       {hasSubItems ? (
                         <button
                           onClick={() => toggleSubMenu(link.label.toLowerCase())}
-                          className="text-[28px] sm:text-[36px] lg:text-[48px] font-bold tracking-tight hover:text-ia-blue transition-colors cursor-pointer text-left flex items-center gap-3"
+                          className="text-[24px] sm:text-[32px] lg:text-[40px] xl:text-[48px] font-bold tracking-tight hover:text-ia-blue transition-colors cursor-pointer text-left flex items-center gap-3"
                         >
                           {link.label}
                           <ChevronDown
@@ -197,7 +215,7 @@ export default function Navbar() {
                         <Link
                           href={link.href}
                           onClick={() => setIsOpen(false)}
-                          className="text-[28px] sm:text-[36px] lg:text-[48px] font-bold tracking-tight hover:text-ia-blue transition-colors"
+                          className="text-[24px] sm:text-[32px] lg:text-[40px] xl:text-[48px] font-bold tracking-tight hover:text-ia-blue transition-colors"
                         >
                           {link.label}
                         </Link>
@@ -225,8 +243,8 @@ export default function Navbar() {
             </nav>
           </div>
 
-          {/* Right Column: Corporate Contacts / Offices (5 columns) */}
-          <div ref={contactRef} className="lg:col-span-5 flex flex-col gap-8 text-left border-t lg:border-t-0 lg:border-l border-ia-border/30 pt-8 lg:pt-0 lg:pl-12">
+          {/* Right Column: Corporate Contacts / Offices (4 columns) */}
+          <div ref={contactRef} className="lg:col-span-4 flex flex-col gap-8 text-left border-t lg:border-t-0 lg:border-l border-ia-border/30 pt-8 lg:pt-0 lg:pl-16">
             <div>
               <span className="block text-[11px] font-bold tracking-[0.15em] text-ia-blue uppercase mb-4">
                 Office Information

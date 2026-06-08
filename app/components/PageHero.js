@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function PageHero({ eyebrow, title, sub, breadcrumbs = [] }) {
   return (
     <section 
-      className="relative h-[380px] bg-ia-navy flex items-center overflow-hidden"
+      className="relative min-h-[340px] py-12 lg:h-[380px] lg:py-0 bg-ia-navy flex items-center overflow-hidden"
       style={{
         backgroundImage: "url('/images/team_boardroom.png')",
         backgroundSize: "cover",

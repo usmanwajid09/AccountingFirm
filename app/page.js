@@ -52,6 +52,7 @@ export default function Home() {
       bgIcon: "bg-ia-blue-tint border-ia-blue/20 text-ia-blue",
       hoverBgIcon: "group-hover/card:bg-ia-blue group-hover/card:text-ia-navy group-hover/card:shadow-[0_0_15px_rgba(0,245,212,0.4)]",
       topBar: "from-transparent via-ia-blue to-transparent",
+      href: "/who-we-help/limited-companies",
     },
     {
       title: "Sole Traders",
@@ -65,6 +66,7 @@ export default function Home() {
       bgIcon: "bg-ia-purple/5 border-ia-purple/20 text-ia-purple",
       hoverBgIcon: "group-hover/card:bg-ia-purple group-hover/card:text-ia-navy group-hover/card:shadow-[0_0_15px_rgba(192,132,252,0.4)]",
       topBar: "from-transparent via-ia-purple to-transparent",
+      href: "/who-we-help/sole-trader-accounting",
     },
     {
       title: "Partnerships & LLPs",
@@ -78,6 +80,7 @@ export default function Home() {
       bgIcon: "bg-ia-coral/5 border-ia-coral/20 text-ia-coral",
       hoverBgIcon: "group-hover/card:bg-ia-coral group-hover/card:text-ia-navy group-hover/card:shadow-[0_0_15px_rgba(255,74,107,0.4)]",
       topBar: "from-transparent via-ia-coral to-transparent",
+      href: "/who-we-help/partnerships-and-llps",
     },
     {
       title: "Contractors & Freelancers",
@@ -91,6 +94,7 @@ export default function Home() {
       bgIcon: "bg-ia-blue-tint border-ia-blue/20 text-ia-blue",
       hoverBgIcon: "group-hover/card:bg-ia-blue group-hover/card:text-ia-navy group-hover/card:shadow-[0_0_15px_rgba(0,245,212,0.4)]",
       topBar: "from-transparent via-ia-blue to-transparent",
+      href: "/who-we-help/contractors-and-freelancers",
     },
   ];
 
@@ -338,8 +342,8 @@ export default function Home() {
                   </p>
                   <div className="mt-auto">
                     <Link 
-                      href="/contact" 
-                      className={`group text-[14px] font-bold ${item.textAccent} inline-flex items-center gap-1.5 transition-all duration-200`}
+                       href={item.href} 
+                       className={`group text-[14px] font-bold ${item.textAccent} inline-flex items-center gap-1.5 transition-all duration-200`}
                     >
                       Get Started <span className="transition-transform duration-200 group-hover/card:translate-x-1 inline-block">&rarr;</span>
                     </Link>
@@ -373,7 +377,7 @@ export default function Home() {
         </div>
 
         <div className="container max-w-[1100px] mx-auto relative z-10">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 divide-y md:divide-y-0 md:divide-x divide-ia-border/30 items-center text-center">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 divide-y-0 md:divide-x divide-ia-border/30 items-center text-center">
             {stats.map((stat, idx) => {
               const numVal = stat.num.replace(/[^0-9]/g, "");
               const suffixVal = stat.num.replace(/[0-9]/g, "");

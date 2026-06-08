@@ -138,13 +138,16 @@ export default function Navbar() {
             href="/"
             ref={logoRef}
             onClick={() => setIsOpen(false)}
-            className="logo flex items-center shrink-0"
+            className="logo flex items-center gap-3 shrink-0"
           >
             <img 
               src="/images/logo.png" 
               alt="internal accountants logo" 
-              className="h-[46px] w-auto object-contain" 
+              className="h-[40px] w-auto object-contain" 
             />
+            <span className="font-bold text-[18px] sm:text-[20px] tracking-wider uppercase text-current font-primary">
+              Internal Accountants
+            </span>
           </Link>
 
           {/* Right Hamburger Button */}

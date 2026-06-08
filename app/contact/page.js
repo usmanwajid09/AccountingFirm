@@ -110,10 +110,10 @@ export default function Contact() {
                             Email Enquiries
                           </span>
                           <a 
-                            href="mailto:hamza@internalaccountants.com" 
+                            href="mailto:partners@internalaccountants.com" 
                             className="text-[16px] font-bold text-white hover:text-ia-blue transition-colors duration-200 break-all"
                           >
-                            hamza@internalaccountants.com
+                            partners@internalaccountants.com
                           </a>
                         </div>
                       </div>

@@ -35,14 +35,14 @@ export default function Home() {
   const stats = [
     { num: "500+", label: "Clients Globally" },
     { num: "2024", label: "Founded" },
-    { num: "3", label: "Expert Partners" },
+    { num: "9", label: "Team Members" },
     { num: "100%", label: "World Coverage" },
   ];
 
   const whoWeHelp = [
     {
       title: "Limited Companies",
-      desc: "Comprehensive corporate accounting, sales tax filings, global corporate tax planning, and statutory financial compliance structured for growing SMEs.",
+      desc: "Comprehensive corporate accounting, corporation tax returns, VAT filings, payroll management, and statutory accounts for UK SMEs.",
       icon: <BriefcaseIcon />,
       accent: "ia-blue",
       glowClass: "glow-card-hover",
@@ -54,8 +54,8 @@ export default function Home() {
       topBar: "from-transparent via-ia-blue to-transparent",
     },
     {
-      title: "Sole Traders & Freelancers",
-      desc: "Hassle-free personal tax compliance, self-assessments, digital nomad cross-border tax advice, and fixed-fee bookkeeping designed for independent contractors.",
+      title: "Sole Traders",
+      desc: "Hassle-free self-assessment tax returns, digital bookkeeping, and proactive tax-saving advice to keep you HMRC-compliant.",
       icon: <UserIcon />,
       accent: "ia-purple",
       glowClass: "glow-card-purple-hover",
@@ -68,7 +68,7 @@ export default function Home() {
     },
     {
       title: "Partnerships & LLPs",
-      desc: "Accurate management of partner tax distributions, capital accounts, joint venture audits, and statutory filings for collaborative enterprises.",
+      desc: "Accurate partnership tax returns (SA800), profit distribution scheduling, capital account tracking, and annual filings.",
       icon: <HandshakeIcon />,
       accent: "ia-coral",
       glowClass: "glow-card-coral-hover",
@@ -80,8 +80,8 @@ export default function Home() {
       topBar: "from-transparent via-ia-coral to-transparent",
     },
     {
-      title: "Growth Startups",
-      desc: "Multi-currency financial dashboard reporting, venture backing cost target metrics, cash runway modeling, and strategic budgeting for scaling startups.",
+      title: "Contractors & Freelancers",
+      desc: "IR35 compliance advice, dividend planning, VAT returns, and dedicated fixed-fee bookkeeping for independent professionals.",
       icon: <RocketIcon />,
       accent: "ia-blue",
       glowClass: "glow-card-hover",
@@ -136,12 +136,6 @@ export default function Home() {
             
             {/* Left Column (8 cols) */}
             <div className="lg:col-span-8 text-left flex flex-col gap-8 relative">
-              {/* Internal Accountants sliding headers */}
-              <div className="flex gap-4 text-3xl sm:text-4xl font-extrabold uppercase tracking-widest self-start overflow-hidden">
-                <span className="hero-internal text-ia-blue">Internal</span>
-                <span className="hero-accountants text-white">Accountants</span>
-              </div>
-              
               {/* Giant Text Header with Split Class */}
               <div className="absolute -left-20 -top-20 w-[500px] h-[500px] bg-glow-teal pointer-events-none select-none z-0" />
               <h1 className="text-[40px] sm:text-[80px] lg:text-[130px] xl:text-[150px] font-extrabold text-ia-white leading-[0.88] tracking-tighter max-w-[1000px] relative uppercase z-10">
@@ -155,15 +149,18 @@ export default function Home() {
                 Our expert team includes <span className="text-white font-medium">ACCAs, ACAs and CPAs</span> that deliver reliable bookkeeping, compliance, cash flow models, and budgeting services so you can focus entirely on your core business.
               </p>
               
-              <div className="mt-4 gsap-reveal">
+              <div className="mt-4 flex flex-wrap items-center gap-6 gsap-reveal z-10 relative">
+                <Button href="/contact" variant="primary">
+                  Book an appointment
+                </Button>
                 <a 
-                  href="#problem"
-                  className="inline-flex items-center gap-3 text-[15px] font-semibold uppercase tracking-wider text-ia-white hover:text-ia-blue transition-colors"
+                  href="tel:+447828762984"
+                  className="inline-flex items-center gap-2.5 text-[15px] font-semibold uppercase tracking-wider text-white hover:text-ia-blue transition-colors"
                 >
-                  Discover More
                   <span className="w-10 h-10 rounded-full border border-ia-blue/30 flex items-center justify-center text-ia-blue shrink-0">
-                    &darr;
+                    📞
                   </span>
+                  +44 782 876 2984
                 </a>
               </div>
             </div>
@@ -234,6 +231,9 @@ export default function Home() {
               A cost-effective, all-in-one alternative to employment that delivers elite global financial support.
             </h2>
             <div className="w-12 h-[3px] bg-ia-blue mb-6" />
+            <p className="text-[16px] text-ia-text-secondary font-light max-w-[760px] mx-auto mt-4 leading-relaxed">
+              By partnering with us, you eliminate the overhead, recruitment cycles, and expensive software licensing fees of an in-house finance team. We provide a full-service virtual accounting office—covering daily ledgers, VAT/tax compliance, real-time cash flow dashboards, and dedicated partner oversight—for a fraction of the cost of a full-time hire.
+            </p>
           </div>
         </div>
       </section>
@@ -258,8 +258,8 @@ export default function Home() {
           <span className="text-[14px] font-bold text-ia-blue tracking-[0.2em] uppercase block mb-4 ship-eyebrow">
             Our Global Impact
           </span>
-          <h2 className="text-[36px] sm:text-[54px] lg:text-[64px] font-bold text-white tracking-tight leading-[1.1] max-w-[850px] ship-title">
-            Seamless bookkeeping, compliance, and cashflow modeling.
+          <h2 className="text-[30px] sm:text-[44px] lg:text-[52px] font-bold text-white tracking-tight leading-[1.1] max-w-[900px] ship-title">
+            Seamless Accounting, Bookkeeping, Reporting, Cashflow management, Compliance & HMRC Investigation dealing.
           </h2>
           <div className="w-16 h-[4px] bg-ia-blue mt-8 rounded-full ship-divider" />
         </div>
@@ -294,7 +294,7 @@ export default function Home() {
           <div className="text-left mb-16 gsap-reveal">
             <SectionLabel>Who We Help</SectionLabel>
             <h2 className="text-[32px] md:text-[40px] font-bold text-white tracking-tight mb-4">
-              Tailored Accounting for Global Success
+              Who do we help
             </h2>
             <p className="text-[16px] sm:text-[18px] text-ia-text-secondary leading-relaxed max-w-[720px] font-light">
               We deliver digital-first accounting services built around your specific entity type. Wherever you operate in the world, we keep you compliant and cash-flow optimized.

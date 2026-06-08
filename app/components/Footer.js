@@ -20,12 +20,15 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16 mb-16">
           {/* Column 1: Brand Info */}
           <div className="flex flex-col gap-6">
-            <Link href="/" className="logo flex items-center shrink-0">
+            <Link href="/" className="logo flex items-center gap-3 shrink-0">
               <img 
                 src="/images/logo.png" 
                 alt="internal accountants logo" 
                 className="h-[40px] w-auto object-contain" 
               />
+              <span className="font-bold text-[18px] sm:text-[20px] tracking-wider uppercase text-white font-primary">
+                Internal Accountants
+              </span>
             </Link>
             <p className="text-[14px] text-ia-text-light font-light leading-relaxed max-w-[280px]">
               Internal Accountants delivers expert bookkeeping, management reporting, and financial planning for growing businesses nationwide.
@@ -91,7 +94,7 @@ export default function Footer() {
                   </svg>
                 </a>
               </p>
-              <p>✉️ <a href="mailto:hamza@internalaccountants.com" className="hover:text-ia-white underline">hamza@internalaccountants.com</a></p>
+              <p>✉️ <a href="mailto:partners@internalaccountants.com" className="hover:text-ia-white underline">partners@internalaccountants.com</a></p>
             </div>
           </div>
         </div>

@@ -1,7 +1,6 @@
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import GSAPAnimation from "./components/GSAPAnimation";
 import BackgroundGrid from "./components/BackgroundGrid";
 
 export const metadata = {
@@ -40,7 +39,6 @@ export default function RootLayout({ children }) {
     <html lang="en" className="h-full antialiased" data-scroll-behavior="smooth">
       <body className="flex flex-col min-h-screen bg-ia-navy font-sans text-ia-text-primary relative">
         <BackgroundGrid />
-        <GSAPAnimation />
         <Navbar />
         <main className="flex-grow relative z-10">{children}</main>
         <Footer />

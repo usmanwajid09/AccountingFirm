@@ -90,7 +90,7 @@ export default function HMRCInvestigations() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <ScrollReveal delay={100}>
               <ServiceCard
-                image="/images/card_folders.png"
+                image="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80"
                 title="Annual Accounts"
                 description="Prepare and file statutory limited company accounts. We ensure full GAAP and company tax return compliance."
                 href="/services/annual-accounts"
@@ -98,7 +98,7 @@ export default function HMRCInvestigations() {
             </ScrollReveal>
             <ScrollReveal delay={200}>
               <ServiceCard
-                image="/images/card_lightbulb.png"
+                image="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80"
                 title="Tax Advisory"
                 description="Bespoke tax optimization, research & development tax relief, and corporate restructuring advisory."
                 href="/services/tax-advisory"

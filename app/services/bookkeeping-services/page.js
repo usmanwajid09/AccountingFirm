@@ -133,7 +133,7 @@ export default function BookkeepingServices() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <ScrollReveal delay={100}>
               <ServiceCard
-                image="/images/reporting_dashboard.png"
+                image="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80"
                 title="Management Reporting"
                 description="Gain absolute clarity over your numbers. We build cash flow analysis, dashboard reports, and P&L boards."
                 href="/services/management-reporting"
@@ -141,7 +141,7 @@ export default function BookkeepingServices() {
             </ScrollReveal>
             <ScrollReveal delay={200}>
               <ServiceCard
-                image="/images/hero_finance.png"
+                image="https://images.unsplash.com/photo-1616077168079-7e05a677ef2c?auto=format&fit=crop&w=600&q=80"
                 title="Budgeting & Financial Planning"
                 description="Plan for tomorrow. We build cash runway models, scenario forecasts, and variance analysis reports."
                 href="/services/budgeting-financial-planning"

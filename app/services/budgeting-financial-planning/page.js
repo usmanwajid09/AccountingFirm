@@ -111,7 +111,7 @@ export default function BudgetingPlanning() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <ScrollReveal delay={100}>
               <ServiceCard
-                image="/images/bookkeeping_concept.png"
+                image="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&q=80"
                 title="Bookkeeping Services"
                 description="Keep your ledgers accurate and compliance-ready. We manage VAT returns, bank reconciliations, and supplier payments."
                 href="/services/bookkeeping-services"
@@ -119,7 +119,7 @@ export default function BudgetingPlanning() {
             </ScrollReveal>
             <ScrollReveal delay={200}>
               <ServiceCard
-                image="/images/reporting_dashboard.png"
+                image="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80"
                 title="Management Reporting"
                 description="Gain absolute clarity over your numbers. We build cash flow analysis, dashboard reports, and P&L boards."
                 href="/services/management-reporting"

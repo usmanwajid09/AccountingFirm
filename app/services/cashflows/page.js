@@ -22,8 +22,8 @@ export default function Cashflows() {
   ];
 
   const software = [
-    { name: "Xero", logo: "https://upload.wikimedia.org/wikipedia/commons/a/a5/Xero_logo.svg" },
-    { name: "QuickBooks", logo: "https://upload.wikimedia.org/wikipedia/commons/0/01/Quickbooks_Logo.svg" },
+    { name: "Xero", logo: "/images/xero_logo.svg" },
+    { name: "QuickBooks", logo: "/images/quickbooks_logo.svg" },
   ];
 
   return (
@@ -95,7 +95,7 @@ export default function Cashflows() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <ScrollReveal delay={100}>
               <ServiceCard
-                image="/images/bookkeeping_concept.png"
+                image="https://images.unsplash.com/photo-1616077168079-7e05a677ef2c?auto=format&fit=crop&w=600&q=80"
                 title="Budgeting & Financial Planning"
                 description="Strategic 12-month multi-scenario forecasting models and cost variance metrics that enable growth."
                 href="/services/budgeting-financial-planning"
@@ -103,7 +103,7 @@ export default function Cashflows() {
             </ScrollReveal>
             <ScrollReveal delay={200}>
               <ServiceCard
-                image="/images/reporting_dashboard.png"
+                image="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80"
                 title="Management Reporting"
                 description="Gain absolute clarity over your numbers. We build cash flow analysis, dashboard reports, and P&L boards."
                 href="/services/management-reporting"

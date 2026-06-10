@@ -22,8 +22,8 @@ export default function ManagementReporting() {
   ];
 
   const software = [
-    { name: "Spotlight Reporting", logo: "https://upload.wikimedia.org/wikipedia/commons/a/a5/Xero_logo.svg" }, // placeholder sw indicator
-    { name: "Fathom Analytics", logo: "https://upload.wikimedia.org/wikipedia/commons/0/01/Quickbooks_Logo.svg" },
+    { name: "Spotlight Reporting", logo: "/images/xero_logo.svg" }, // placeholder sw indicator
+    { name: "Fathom Analytics", logo: "/images/quickbooks_logo.svg" },
   ];
 
   return (
@@ -113,7 +113,7 @@ export default function ManagementReporting() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <ScrollReveal delay={100}>
               <ServiceCard
-                image="/images/bookkeeping_concept.png"
+                image="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&q=80"
                 title="Bookkeeping Services"
                 description="Keep your ledgers accurate and compliance-ready. We manage VAT returns, bank reconciliations, and supplier payments."
                 href="/services/bookkeeping-services"
@@ -121,7 +121,7 @@ export default function ManagementReporting() {
             </ScrollReveal>
             <ScrollReveal delay={200}>
               <ServiceCard
-                image="/images/hero_finance.png"
+                image="https://images.unsplash.com/photo-1616077168079-7e05a677ef2c?auto=format&fit=crop&w=600&q=80"
                 title="Budgeting & Financial Planning"
                 description="Plan for tomorrow. We build cash runway models, scenario forecasts, and variance analysis reports."
                 href="/services/budgeting-financial-planning"

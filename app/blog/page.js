@@ -18,7 +18,7 @@ export default function BlogListing() {
       date: "June 4, 2026",
       readTime: "5 min read",
       excerpt: "Reconciliation lags, receipt tracking omissions, and improper general ledger setups can stall growth. Learn how to clean your books.",
-      img: "/images/bookkeeping_concept.png",
+      img: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&q=80",
     },
     {
       slug: "cash-flow-vs-net-profit-why-one-can-kill-you",
@@ -27,7 +27,7 @@ export default function BlogListing() {
       date: "May 28, 2026",
       readTime: "6 min read",
       excerpt: "An income statement can display healthy gross profit margins while bank accounts run completely dry. Discover how working capital gaps happen.",
-      img: "/images/hero_finance.png",
+      img: "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&w=600&q=80",
     },
     {
       slug: "how-to-build-a-dynamic-12-month-financial-forecast",
@@ -36,7 +36,7 @@ export default function BlogListing() {
       date: "May 15, 2026",
       readTime: "7 min read",
       excerpt: "Strategic scenario planning helps companies make capital investments and hire teams safely. Here is our partner's step-by-step forecasting guide.",
-      img: "/images/reporting_dashboard.png",
+      img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80",
     },
   ];
 

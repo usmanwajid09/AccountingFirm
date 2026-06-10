@@ -24,8 +24,8 @@ export default function SelfAssessments() {
   ];
 
   const software = [
-    { name: "Xero", logo: "https://upload.wikimedia.org/wikipedia/commons/a/a5/Xero_logo.svg" },
-    { name: "HMRC MTD", logo: "https://upload.wikimedia.org/wikipedia/commons/2/23/Sage_Group_logo.svg" }, // Sage/HMRC mock
+    { name: "Xero", logo: "/images/xero_logo.svg" },
+    { name: "HMRC MTD", logo: "/images/sage_logo.svg" }, // Sage/HMRC mock
   ];
 
   return (
@@ -112,7 +112,7 @@ export default function SelfAssessments() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <ScrollReveal delay={100}>
               <ServiceCard
-                image="/images/card_folders.png"
+                image="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80"
                 title="Annual Accounts"
                 description="Compile statutory limited company accounts and CT600 tax returns. We coordinate company books and personal filings."
                 href="/services/annual-accounts"
@@ -120,7 +120,7 @@ export default function SelfAssessments() {
             </ScrollReveal>
             <ScrollReveal delay={200}>
               <ServiceCard
-                image="/images/bookkeeping_concept.png"
+                image="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&q=80"
                 title="Bookkeeping"
                 description="Ditch the receipt piles. We manage daily bookkeeping transactions, VAT returns, and reconciliations."
                 href="/services/bookkeeping-services"

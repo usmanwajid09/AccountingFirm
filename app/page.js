@@ -154,7 +154,7 @@ export default function Home() {
               </p>
               
               <div className="mt-4 flex flex-wrap items-center gap-6 gsap-reveal z-10 relative">
-                <Button href="/contact" variant="primary">
+                <Button href="/contact" variant="outline">
                   Book an appointment
                 </Button>
                 <a 
@@ -265,7 +265,7 @@ export default function Home() {
             Our Global Impact
           </span>
           <h2 className="text-[30px] sm:text-[44px] lg:text-[52px] font-bold text-white tracking-tight leading-[1.1] max-w-[900px] ship-title">
-            Seamless Accounting, Bookkeeping, Reporting, Cashflow management, <span className="text-ia-blue">Compliance</span> & <span className="text-ia-blue">HMRC Investigation</span> dealing.
+            Seamless Accounting, Bookkeeping, Reporting, Cashflow management, <span className="text-ia-blue">Compliance & HMRC Investigation dealing</span>.
           </h2>
           <div className="w-16 h-[4px] bg-ia-blue mt-8 rounded-full ship-divider" />
         </div>

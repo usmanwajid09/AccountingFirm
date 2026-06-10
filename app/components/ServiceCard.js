@@ -3,33 +3,26 @@ import Link from "next/link";
 
 export default function ServiceCard({ image, title, description, href, horizontal = false, stepNumber }) {
   
-  // Custom 3D Isometric Photo Frame Component
-  const IsometricPhotoFrame = () => (
-    <div className="relative w-full aspect-square max-w-[200px] mx-auto shrink-0 group select-none">
-      {/* Clipped image face */}
-      <div 
-        className="absolute inset-0 w-full h-full overflow-hidden transition-transform duration-500 group-hover:scale-105"
-        style={{
-          clipPath: "polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)",
-          WebkitClipPath: "polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)"
-        }}
-      >
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={image}
-          alt={title}
-          className="w-full h-full object-cover"
-        />
+  // Modern Offset Border Photo Frame Component
+  const ModernPhotoFrame = () => (
+    <div className="relative w-full aspect-square max-w-[200px] mx-auto shrink-0 select-none group/frame">
+      {/* Offset colored background card */}
+      <div className="absolute inset-0 translate-x-2.5 translate-y-2.5 rounded-2xl border border-ia-blue bg-ia-blue/10 transition-transform duration-300 group-hover/card:translate-x-1 group-hover/card:translate-y-1 group-hover/card:border-ia-navy/30 group-hover/card:bg-ia-navy/5" />
+      
+      {/* Main image card */}
+      <div className="relative w-full h-full rounded-2xl border border-ia-border bg-ia-navy-alt overflow-hidden transition-all duration-300 group-hover/card:border-ia-navy/20 shadow-md">
+        {/* Inner container */}
+        <div className="w-full h-full overflow-hidden relative">
+          {/* Subtle overlay */}
+          <div className="absolute inset-0 bg-ia-navy/15 z-10 transition-opacity duration-300 group-hover/card:opacity-0" />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={image}
+            alt={title}
+            className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover/frame:scale-105"
+          />
+        </div>
       </div>
-      {/* SVG 3D Cube Overlay Lines */}
-      <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 100 100" preserveAspectRatio="none">
-        {/* Hexagon Border */}
-        <polygon points="50,0 100,25 100,75 50,100 0,75 0,25" fill="none" stroke="var(--ia-blue)" strokeWidth="1.5" />
-        {/* 3D Face Dividers */}
-        <line x1="50" y1="50" x2="50" y2="100" stroke="var(--ia-blue)" strokeWidth="1.5" />
-        <line x1="50" y1="50" x2="0" y2="25" stroke="var(--ia-blue)" strokeWidth="1.5" />
-        <line x1="50" y1="50" x2="100" y2="25" stroke="var(--ia-blue)" strokeWidth="1.5" />
-      </svg>
     </div>
   );
 
@@ -52,9 +45,9 @@ export default function ServiceCard({ image, title, description, href, horizonta
           />
         </div>
 
-        {/* Left: 3D Photo Frame */}
+        {/* Left: Modern Photo Frame */}
         <div className="w-full md:w-[35%] flex justify-center shrink-0 relative z-10">
-          <IsometricPhotoFrame />
+          <ModernPhotoFrame />
         </div>
 
         {/* Right: Content details */}
@@ -98,10 +91,10 @@ export default function ServiceCard({ image, title, description, href, horizonta
         />
       </div>
 
-      {/* 3D Photoframe Header */}
+      {/* Modern Photoframe Header */}
       {image && (
         <div className="mb-6 flex justify-center w-full relative z-10">
-          <IsometricPhotoFrame />
+          <ModernPhotoFrame />
         </div>
       )}
       

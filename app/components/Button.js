@@ -6,6 +6,7 @@ export default function Button({ href, variant = "primary", className = "", chil
     primary: "bg-ia-blue text-ia-white hover:bg-ia-blue-dark py-[14px] px-[32px] border-none shadow-sm",
     secondary: "bg-transparent border-2 border-ia-blue text-ia-blue hover:bg-ia-blue hover:text-ia-white py-[12px] px-[30px]",
     inverse: "bg-ia-white text-ia-blue border-none hover:bg-ia-bg-light py-[14px] px-[32px]",
+    outline: "border border-white/20 hover:border-ia-blue text-white hover:text-ia-blue py-[12px] px-[24px] bg-white/5 hover:bg-ia-blue/5 shadow-none",
     "text-link": "bg-transparent text-ia-blue font-medium hover:underline p-0 lowercase normal-case tracking-normal",
   };
 

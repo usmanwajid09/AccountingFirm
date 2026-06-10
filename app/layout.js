@@ -37,7 +37,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="h-full antialiased">
+    <html lang="en" className="h-full antialiased" data-scroll-behavior="smooth">
       <body className="flex flex-col min-h-screen bg-ia-navy font-sans text-ia-text-primary relative">
         <BackgroundGrid />
         <GSAPAnimation />

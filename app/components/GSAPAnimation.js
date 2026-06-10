@@ -398,7 +398,7 @@ export default function GSAPAnimation() {
     // Cleanup triggers on unmount/pathname change
     return () => {
       clearTimeout(timer);
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill(true));
       gsap.killTweensOf("*");
       window.removeEventListener("resize", updateString);
     };

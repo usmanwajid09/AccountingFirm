@@ -72,7 +72,7 @@ export default function Pricing() {
       <PageHero
         eyebrow="OUR PRICING"
         title="Transparent, Fixed Monthly Fees"
-        sub="Simple, predictable pricing structured to support your business as it grows—with no hidden surprises."
+        sub="Simple, predictable pricing structured to support your business as it grows, with no hidden surprises."
         breadcrumbs={[{ label: "Pricing" }]}
       />
 

@@ -56,7 +56,7 @@ export default function Services() {
     {
       num: "07",
       title: "Budgeting",
-      image: "https://images.unsplash.com/photo-1616077168079-7e05a677ef2c?auto=format&fit=crop&w=600&q=80",
+      image: "https://images.unsplash.com/photo-1544377193-33dcf4d68fb5?auto=format&fit=crop&w=600&q=80",
       href: "/services/budgeting-financial-planning",
       desc: "Strategic 12-month multi-scenario forecasting models and cost variance metrics that enable your business to grow with absolute confidence.",
     },

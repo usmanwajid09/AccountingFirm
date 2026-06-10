@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Button from "../components/Button";
 
 export default function ContactForm() {
@@ -15,6 +15,19 @@ export default function ContactForm() {
     service: "",
     message: "",
   });
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const params = new URLSearchParams(window.location.search);
+      const serviceParam = params.get("service");
+      const messageParam = params.get("message");
+      setFormData((prev) => ({
+        ...prev,
+        ...(serviceParam ? { service: serviceParam } : {}),
+        ...(messageParam ? { message: messageParam } : {}),
+      }));
+    }
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();

@@ -187,6 +187,7 @@ export default function Navbar() {
         { label: "Contractors & Freelancers", href: "/who-we-help/contractors-and-freelancers" },
       ],
     },
+    { label: "Pricing", href: "/pricing" },
     { label: "Contact Us", href: "/contact" },
   ];
 

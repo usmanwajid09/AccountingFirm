@@ -22,9 +22,9 @@ export default function AnnualAccounts() {
   ];
 
   const software = [
-    { name: "Xero", logo: "https://upload.wikimedia.org/wikipedia/commons/a/a5/Xero_logo.svg" },
-    { name: "QuickBooks", logo: "https://upload.wikimedia.org/wikipedia/commons/0/01/Quickbooks_Logo.svg" },
-    { name: "Sage", logo: "https://upload.wikimedia.org/wikipedia/commons/2/23/Sage_Group_logo.svg" },
+    { name: "Xero", logo: "/images/xero_logo.svg" },
+    { name: "QuickBooks", logo: "/images/quickbooks_logo.svg" },
+    { name: "Sage", logo: "/images/sage_logo.svg" },
   ];
 
   return (

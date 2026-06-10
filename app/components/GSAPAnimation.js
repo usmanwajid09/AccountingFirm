@@ -16,6 +16,10 @@ export default function GSAPAnimation() {
     // Register ScrollTrigger plugin
     gsap.registerPlugin(ScrollTrigger);
 
+    // Create a GSAP context so ctx.revert() cleanly undoes pin-spacers and
+    // all DOM transforms before React unmounts — prevents the removeChild crash.
+    const ctx = gsap.context(() => {});
+
     // Helper to update the hanging string SVG coordinates
     const updateString = () => {
       const string = document.getElementById("hanging-string");
@@ -48,6 +52,7 @@ export default function GSAPAnimation() {
     window.addEventListener("resize", updateString);
 
     const timer = setTimeout(() => {
+      ctx.add(() => {
       // Refresh ScrollTrigger to find new DOM nodes
       ScrollTrigger.refresh();
 
@@ -393,13 +398,14 @@ export default function GSAPAnimation() {
 
       // Refresh ScrollTrigger again after all elements are bound
       ScrollTrigger.refresh();
+      }); // end ctx.add
     }, 100);
 
-    // Cleanup triggers on unmount/pathname change
+    // ctx.revert() undoes pin-spacers and all GSAP DOM changes before React
+    // unmounts, preventing the removeChild "not a child of this node" crash.
     return () => {
       clearTimeout(timer);
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill(true));
-      gsap.killTweensOf("*");
+      ctx.revert();
       window.removeEventListener("resize", updateString);
     };
   }, [pathname]);

@@ -51,7 +51,7 @@ export async function POST(request) {
       },
       body: JSON.stringify({
         from: "Internal Accountants Form <onboarding@resend.dev>",
-        to: "its.usman.wajid@gmail.com", // Form submissions will go to you
+        to: process.env.CONTACT_RECEIVER_EMAIL || "its.usman.wajid@gmail.com", // Configurable via environment variable
         subject: subject,
         html: htmlContent,
       }),

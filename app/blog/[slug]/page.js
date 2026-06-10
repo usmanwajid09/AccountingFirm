@@ -19,7 +19,7 @@ const postsDatabase = {
         </p>
         <h2>1. Delaying Bank Reconciliations</h2>
         <p>
-          Reconciling your bank feeds weekly ensures that bank balances align with ledger accounts. Waiting until the end of the month—or worse, the end of the quarter—creates a mountain of work. Transactions are easily forgotten, and audit trails grow cold. Weekly reconciliation prevents errors and highlights credit card leaks immediately.
+          Reconciling your bank feeds weekly ensures that bank balances align with ledger accounts. Waiting until the end of the month, or even the end of the quarter, creates a mountain of work. Transactions are easily forgotten, and audit trails grow cold. Weekly reconciliation prevents errors and highlights credit card leaks immediately.
         </p>
         <h2>2. Mixing Personal and Business Expenses</h2>
         <p>

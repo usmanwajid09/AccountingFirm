@@ -26,12 +26,12 @@ export default function PartnershipsAndLLPs() {
       a: "A partnership itself does not pay income tax. Instead, the partnership must submit an annual Partnership Tax Return (SA800) to HMRC showing the business's profits or losses. These profits are then allocated to the partners according to their agreed shares. Each partner must declare their share of profits on their own individual Self-Assessment Tax Return (SA104 page) and pay tax and National Insurance accordingly."
     },
     {
-      q: "What is a Limited Liability Partnership (LLP) and how is it taxed?",
-      a: "An LLP combines the organizational flexibility of a partnership with the limited liability of a limited company. Legally, the LLP is a corporate body. However, for tax purposes, LLPs are treated as transparent—meaning the partners (members) are taxed individually on their share of the LLP's profits, similar to a standard partnership, rather than the LLP paying Corporation Tax."
+      q: "How are LLPs taxed compared to limited companies?",
+      a: "An LLP combines the organizational flexibility of a partnership with the limited liability of a limited company. Legally, the LLP is a corporate body. However, for tax purposes, LLPs are treated as transparent, meaning the partners (members) are taxed individually on their share of the LLP's profits, similar to a standard partnership, rather than the LLP paying Corporation Tax."
     },
     {
-      q: "How do capital accounts and drawings work?",
-      a: "A partner's capital account represents their equity in the partnership—made up of their initial capital contributions and their share of accumulated profits, minus any drawings (cash taken out of the business). We track these figures in real-time, helping partnerships maintain clean, audited accounts and avoid disputes."
+      q: "What is a partner's capital account?",
+      a: "A partner's capital account represents their equity in the partnership, which is made up of their initial capital contributions and their share of accumulated profits, minus any drawings (cash taken out of the business). We track these figures in real-time, helping partnerships maintain clean, audited accounts and avoid disputes."
     },
     {
       q: "Can you help set up a new partnership or LLP?",

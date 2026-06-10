@@ -238,7 +238,7 @@ export default function Home() {
             </h2>
             <div className="w-12 h-[3px] bg-ia-blue mb-6" />
             <p className="text-[16px] text-ia-text-secondary font-light max-w-[760px] mx-auto mt-4 leading-relaxed">
-              By partnering with us, you eliminate the overhead, recruitment cycles, and expensive software licensing fees of an in-house finance team. We provide a full-service virtual accounting office—covering daily ledgers, VAT/tax compliance, real-time cash flow dashboards, and dedicated partner oversight—for a fraction of the cost of a full-time hire.
+              By partnering with us, you eliminate the overhead, recruitment cycles, and expensive software licensing fees of an in-house finance team. We provide a full-service virtual accounting office, covering daily ledgers, VAT/tax compliance, real-time cash flow dashboards, and dedicated partner oversight, all for a fraction of the cost of a full-time hire.
             </p>
           </div>
         </div>

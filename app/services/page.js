@@ -75,7 +75,7 @@ export default function Services() {
       <PageHero
         eyebrow="OUR SERVICES"
         title="Accounting Services Tailored to Your Business"
-        sub="From day-to-day bookkeeping to strategic financial planning — Internal Accountants has you covered."
+        sub="From day-to-day bookkeeping to strategic financial planning, Internal Accountants has you covered."
         breadcrumbs={[{ label: "Services" }]}
       />
 

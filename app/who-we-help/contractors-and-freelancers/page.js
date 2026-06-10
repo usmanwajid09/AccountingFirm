@@ -23,7 +23,7 @@ export default function ContractorsAndFreelancers() {
   const faqs = [
     {
       q: "What is IR35 and how does it affect contractors?",
-      a: "IR35 is tax legislation designed to identify 'disguised employees'—individuals who provide services via an intermediary (like a limited company) but who would be treated as employees if they were engaged directly. If your contract is 'inside IR35', you must pay tax and NI at standard employment rates. If 'outside IR35', you can pay yourself tax-efficiently via dividends. We review your contracts and working arrangements to help establish your correct IR35 status."
+      a: "IR35 is tax legislation designed to identify 'disguised employees', which refers to individuals who provide services via an intermediary (like a limited company) but who would be treated as employees if they were engaged directly. If your contract is 'inside IR35', you must pay tax and NI at standard employment rates. If 'outside IR35', you can pay yourself tax-efficiently via dividends. We review your contracts and working arrangements to help establish your correct IR35 status."
     },
     {
       q: "Should I trade as a limited company or sole trader as a freelancer?",

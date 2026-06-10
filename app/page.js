@@ -244,32 +244,34 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 3. Full-screen Ship Section */}
-      <section className="ship-section h-[100vh] min-h-[600px] relative overflow-hidden bg-ia-navy flex items-center justify-center">
-        {/* Background Ship Image with Scale/Parallax class */}
-        <div className="absolute inset-0 w-full h-full z-0 ship-bg-container overflow-hidden">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img 
-            src="/images/ship.png" 
-            alt="Global operations represented by cargo ship" 
-            className="w-full h-full object-cover ship-image" 
-          />
-          {/* Dimmed Overlays */}
-          <div className="absolute inset-0 bg-ia-navy/80 mix-blend-multiply z-1" />
-          <div className="absolute inset-0 bg-gradient-to-b from-ia-navy via-transparent to-ia-navy z-1" />
-        </div>
+      {/* 3. Full-screen Ship Section (with native CSS sticky pinning parent) */}
+      <div className="ship-parent relative h-[220vh] w-full">
+        <section className="ship-section sticky top-0 h-[100vh] min-h-[600px] w-full overflow-hidden bg-ia-navy flex items-center justify-center">
+          {/* Background Ship Image with Scale/Parallax class */}
+          <div className="absolute inset-0 w-full h-full z-0 ship-bg-container overflow-hidden">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img 
+              src="/images/ship.png" 
+              alt="Global operations represented by cargo ship" 
+              className="w-full h-full object-cover ship-image" 
+            />
+            {/* Dimmed Overlays */}
+            <div className="absolute inset-0 bg-ia-navy/80 mix-blend-multiply z-1" />
+            <div className="absolute inset-0 bg-gradient-to-b from-ia-navy via-transparent to-ia-navy z-1" />
+          </div>
 
-        {/* Section Content */}
-        <div className="container max-w-[960px] mx-auto px-6 relative z-10 text-center flex flex-col items-center justify-center gsap-reveal">
-          <span className="text-[14px] font-bold text-ia-blue tracking-[0.2em] uppercase block mb-4 ship-eyebrow">
-            Our Global Impact
-          </span>
-          <h2 className="text-[30px] sm:text-[44px] lg:text-[52px] font-bold text-white tracking-tight leading-[1.1] max-w-[900px] ship-title">
-            Seamless Accounting, Bookkeeping, Reporting, Cashflow management, <span className="text-ia-blue">Compliance & HMRC Investigation dealing</span>.
-          </h2>
-          <div className="w-16 h-[4px] bg-ia-blue mt-8 rounded-full ship-divider" />
-        </div>
-      </section>
+          {/* Section Content */}
+          <div className="container max-w-[960px] mx-auto px-6 relative z-10 text-center flex flex-col items-center justify-center gsap-reveal">
+            <span className="text-[14px] font-bold text-ia-blue tracking-[0.2em] uppercase block mb-4 ship-eyebrow">
+              Our Global Impact
+            </span>
+            <h2 className="text-[30px] sm:text-[44px] lg:text-[52px] font-bold text-white tracking-tight leading-[1.1] max-w-[900px] ship-title">
+              Seamless Accounting, Bookkeeping, Reporting, Cashflow management, <span className="text-ia-blue">Compliance & HMRC Investigation dealing</span>.
+            </h2>
+            <div className="w-16 h-[4px] bg-ia-blue mt-8 rounded-full ship-divider" />
+          </div>
+        </section>
+      </div>
 
       {/* 4. Scrolling Marquee Banner Section (velocity-linked marquee) */}
       <section className="marquee-section bg-ia-navy py-12 overflow-hidden border-t border-b border-ia-border/30 select-none pointer-events-none">

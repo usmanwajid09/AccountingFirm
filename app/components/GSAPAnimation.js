@@ -373,19 +373,17 @@ export default function GSAPAnimation() {
       });
     });
 
-    // 12. Ship Section Pinned & Scale Animation
-    const shipSection = document.querySelector(".ship-section");
+    // 12. Ship Section Pinned & Scale Animation (Native CSS Pinning)
+    const shipParent = document.querySelector(".ship-parent");
     const shipImage = document.querySelector(".ship-image");
     
-    if (shipSection && shipImage) {
+    if (shipParent && shipImage) {
       const shipTl = gsap.timeline({
         scrollTrigger: {
-          trigger: shipSection,
+          trigger: shipParent,
           start: "top top",
-          end: "+=120%",
+          end: "bottom bottom",
           scrub: 1.0,
-          pin: true,
-          anticipatePin: 1,
         }
       });
       

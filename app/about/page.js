@@ -26,6 +26,36 @@ export default function About() {
     },
   ];
 
+  const specialists = [
+    {
+      name: "Sohail Ashraf",
+      title: "Payroll Manager",
+      qualification: "CMA, BS Accounting & Finance",
+      experience: "6+ Years in Payroll & Pension",
+      desc: "Manages complex monthly payroll schedules, workplace pensions compliance, and HMRC real-time information filings.",
+      img: "/images/sohail_ashraf.jpg",
+      glowClass: "glow-card-amber-hover"
+    },
+    {
+      name: "Younas Irfan",
+      title: "Senior Accountant",
+      qualification: "CMA",
+      experience: "5+ Years in Finance Accounting",
+      desc: "Specializes in corporate accounts preparation, VAT compliance filing, and comprehensive balance sheet health checks.",
+      img: "/images/younas_irfan.jpg",
+      glowClass: "glow-card-hover"
+    },
+    {
+      name: "Ali Shan",
+      title: "Financial Accountant",
+      qualification: "ACCA",
+      experience: "3 Years in Audit & Tax",
+      desc: "Coordinates tax return filings, year-end accounts disclosures, and HMRC investigation audit support.",
+      img: "/images/ali_shan.jpg",
+      glowClass: "glow-card-purple-hover"
+    }
+  ];
+
   const steps = [
     {
       num: "01",
@@ -105,16 +135,20 @@ export default function About() {
       </section>
 
       {/* 3. Meet the Team Section */}
-      <section className="bg-ia-bg-light py-24" id="team">
+      <section className="bg-ia-bg-light py-24 border-b border-ia-border/30" id="team">
         <div className="container max-w-[1200px] mx-auto px-6 md:px-12">
           <div className="section-header text-center max-w-[700px] mx-auto mb-16 gsap-reveal">
             <SectionLabel>Meet the Team</SectionLabel>
             <h2 className="text-[32px] md:text-[36px] font-bold text-white tracking-tight">
               The People Behind Your Numbers
             </h2>
+            <p className="text-[16px] text-ia-text-secondary mt-4 font-light">
+              Our leadership partners and dedicated specialists bring decades of combined accounting, tax compliance, and payroll expertise to your business.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-[800px] mx-auto gsap-stagger-grid">
+          {/* Leadership Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-[800px] mx-auto gsap-stagger-grid mb-20">
             {team.map((partner, idx) => (
               <div 
                 key={idx} 
@@ -166,6 +200,124 @@ export default function About() {
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* Specialists Header */}
+          <div className="text-center max-w-[700px] mx-auto mb-12 gsap-reveal">
+            <h3 className="text-[16px] font-bold text-ia-blue uppercase tracking-widest leading-none">
+              Accounting & Payroll Specialists
+            </h3>
+            <div className="w-12 h-[2px] bg-ia-blue/60 mx-auto mt-4 rounded-full" />
+          </div>
+
+          {/* Specialists Cards Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-[1000px] mx-auto gsap-stagger-grid">
+            {specialists.map((spec, idx) => (
+              <div 
+                key={idx}
+                className={`relative overflow-hidden bg-ia-navy-alt border border-ia-border rounded-md p-6 pt-8 shadow-card ${spec.glowClass} hover:-translate-y-1.5 transition-all duration-300 flex flex-col items-center text-center h-full group`}
+              >
+                {/* Background Leaf Watermark */}
+                <div className="absolute -right-8 -bottom-8 w-28 h-28 opacity-[0.01] pointer-events-none transition-all duration-700 ease-out group-hover:scale-120 group-hover:rotate-12 group-hover:opacity-[0.03] z-0 select-none">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={`/images/test_shape_nature_${idx % 3}.png`}
+                    alt=""
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+
+                <div className="relative z-10 flex flex-col items-center h-full flex-grow w-full">
+                  {/* Portrait Image Container */}
+                  <div className="w-[100px] h-[100px] rounded-full overflow-hidden mb-5 border-2 border-ia-border/40 bg-ia-navy flex items-center justify-center relative shadow-md transition-transform duration-500 group-hover:scale-110 group-hover:border-ia-blue/60">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={spec.img}
+                      alt={spec.name}
+                      className="w-full h-full object-cover"
+                    />
+                    {/* Ring glow */}
+                    <div className="absolute inset-0 rounded-full border border-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  </div>
+
+                  <h3 className="text-[17px] font-semibold text-white mb-1 group-hover:text-ia-blue transition-colors duration-200">
+                    {spec.name}
+                  </h3>
+                  <span className="block text-[12px] font-bold text-ia-text-secondary uppercase tracking-wider mb-2">
+                    {spec.title}
+                  </span>
+                  
+                  {/* Qualification Tag */}
+                  <div className="inline-block bg-ia-navy px-3 py-1 rounded-full text-[11px] font-medium text-white/90 border border-ia-border/40 mb-4">
+                    {spec.qualification}
+                  </div>
+
+                  {/* Divider */}
+                  <div className="w-8 h-[1px] bg-ia-border/50 mb-4 transition-all duration-300 group-hover:w-16" />
+
+                  <p className="text-[13px] text-ia-text-secondary font-light leading-relaxed mb-4 flex-grow">
+                    {spec.desc}
+                  </p>
+
+                  <div className="text-[12px] font-medium text-ia-blue mt-auto">
+                    {spec.experience}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 4. Life at Internal Accountants (Team Showcase) */}
+      <section className="bg-ia-navy border-b border-ia-border/30 py-24 relative overflow-hidden">
+        {/* Background Gradients */}
+        <div className="absolute top-[20%] left-[-10%] w-[350px] h-[350px] bg-glow-teal pointer-events-none select-none z-0" />
+        <div className="absolute bottom-[20%] right-[-10%] w-[350px] h-[350px] bg-glow-purple pointer-events-none select-none z-0" />
+
+        <div className="container max-w-[1200px] mx-auto px-6 md:px-12 relative z-10">
+          <div className="section-header text-center max-w-[700px] mx-auto mb-16 gsap-reveal">
+            <SectionLabel>Life at Internal Accountants</SectionLabel>
+            <h2 className="text-[32px] md:text-[36px] font-bold text-white tracking-tight">
+              Our Team in Action
+            </h2>
+            <p className="text-[16px] text-ia-text-secondary mt-4 font-light">
+              Collaborating in real-time at our Central London office to deliver elite corporate accounting services globally.
+            </p>
+          </div>
+
+          <div className="max-w-[1000px] mx-auto gsap-reveal">
+            <div className="group/gallery relative rounded-lg overflow-hidden border border-ia-border bg-ia-navy-alt shadow-card flex flex-col md:flex-row items-stretch min-h-[400px]">
+              <div className="relative overflow-hidden md:w-3/5 min-h-[300px]">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img 
+                  src="/images/team_pic.jpg" 
+                  alt="Internal Accountants team planning session" 
+                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover/gallery:scale-105"
+                />
+                {/* Gradient overlays */}
+                <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-ia-navy via-ia-navy/20 to-ia-navy/10 opacity-70 z-10" />
+              </div>
+              {/* Description bar */}
+              <div className="p-8 md:w-2/5 bg-ia-navy-alt relative z-20 flex flex-col justify-center border-t md:border-t-0 md:border-l border-ia-border/40">
+                <h3 className="text-[20px] font-bold text-white mb-4">
+                  Partner Strategy Briefing
+                </h3>
+                <p className="text-[15px] text-ia-text-secondary font-light leading-relaxed mb-6">
+                  Hamza Zahoor leading a client scenario forecasting session with senior financial analysts and compliance officers at the boardroom table.
+                </p>
+                <div className="flex items-center gap-4">
+                  <div className="flex -space-x-3">
+                    <img className="w-8 h-8 rounded-full border border-ia-border" src="/images/Hamza Zahoor.png" alt="Hamza Zahoor" />
+                    <img className="w-8 h-8 rounded-full border border-ia-border" src="/images/Touseef ahmad.png" alt="Tauseef Ahmad" />
+                    <img className="w-8 h-8 rounded-full border border-ia-border" src="/images/sohail_ashraf.jpg" alt="Sohail Ashraf" />
+                  </div>
+                  <span className="text-[12px] font-semibold text-ia-blue uppercase tracking-wider">
+                    Expert Collaboration
+                  </span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

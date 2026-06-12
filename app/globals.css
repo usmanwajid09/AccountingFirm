@@ -163,3 +163,19 @@ textarea:focus-visible {
   box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.8), 0 0 20px 2px rgba(255, 74, 107, 0.08) !important;
 }
 
+.glow-card-amber-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.glow-card-amber-hover:hover {
+  border-color: rgba(251, 191, 36, 0.3) !important;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.8), 0 0 20px 2px rgba(251, 191, 36, 0.08) !important;
+}
+
+.glow-card-blue-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.glow-card-blue-hover:hover {
+  border-color: rgba(6, 182, 212, 0.3) !important;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.8), 0 0 20px 2px rgba(6, 182, 212, 0.08) !important;
+}
+

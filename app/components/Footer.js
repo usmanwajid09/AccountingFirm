@@ -95,7 +95,7 @@ export default function Footer() {
                   <span className="hover:underline">+44 782 876 2984</span>
                 </a>
               </p>
-              <p>✉️ <a href="mailto:partners@internalaccountants.com" className="hover:text-ia-white underline">partners@internalaccountants.com</a></p>
+              <p>✉️ <a href="mailto:partner@internalaccountants.com" className="hover:text-ia-white underline">partner@internalaccountants.com</a></p>
             </div>
           </div>
         </div>
@@ -107,7 +107,7 @@ export default function Footer() {
           </p>
           <div className="flex items-center gap-4">
             <a 
-              href="https://linkedin.com" 
+              href="https://www.linkedin.com/company/internalaccountants" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="text-ia-text-secondary hover:text-ia-white transition-colors"

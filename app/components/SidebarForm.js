@@ -128,8 +128,8 @@ export default function SidebarForm() {
           </svg>
           +44 782 876 2984
         </a>
-        <a href="mailto:partners@internalaccountants.com" className="block text-ia-text-muted hover:text-ia-blue underline">
-          partners@internalaccountants.com
+        <a href="mailto:partner@internalaccountants.com" className="block text-ia-text-muted hover:text-ia-blue underline">
+          partner@internalaccountants.com
         </a>
       </div>
     </div>

@@ -15,7 +15,7 @@ export default function Contact() {
       title: "London Office",
       address: ["Central London"],
       phone: "+44 782 876 2984",
-      email: "partners@internalaccountants.com",
+      email: "partner@internalaccountants.com",
     },
   ];
 
@@ -95,10 +95,10 @@ export default function Contact() {
                             Email Enquiries
                           </span>
                           <a 
-                            href="mailto:partners@internalaccountants.com" 
+                            href="mailto:partner@internalaccountants.com" 
                             className="text-[16px] font-bold text-white hover:text-ia-blue transition-colors duration-200 break-all"
                           >
-                            partners@internalaccountants.com
+                            partner@internalaccountants.com
                           </a>
                         </div>
                       </div>
@@ -122,7 +122,7 @@ export default function Contact() {
 
                   <div className="mt-12 pt-8 border-t border-ia-border">
                     <a 
-                      href="https://linkedin.com"
+                      href="https://www.linkedin.com/company/internalaccountants"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center text-[15px] font-semibold text-ia-blue hover:text-ia-blue-dark hover:underline transition-all duration-200"

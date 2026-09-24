@@ -45,3 +45,10 @@ next-env.d.ts
 scratch/
 move_to_root.py
 
+# local reference assets (not for repo)
+*.JPG
+*.jpg
+Team details.txt
+Team names.png
+Changing.pdf
+

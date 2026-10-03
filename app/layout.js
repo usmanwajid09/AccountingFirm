@@ -12,7 +12,7 @@ export const metadata = {
   },
   description: "Internal Accountants delivers expert bookkeeping, international compliance, cash flow forecasting, and budgeting services for growing businesses worldwide.",
   verification: {
-    google: "E3FeGCwfCR1bbu7WMzb326Sgws9aWwSMcdGt8EbU1Dw",
+    google: "t65cIjTeDxVQIcpGy_vwKe5O8W1cElYv3pz_KfhUfBg",
   },
   openGraph: {
     title: "Internal Accountants | Global Bookkeeping, Accounting & Compliance",

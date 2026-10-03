@@ -4,9 +4,6 @@ import Footer from "./components/Footer";
 import BackgroundGrid from "./components/BackgroundGrid";
 
 export const metadata = {
-   verification: {
-    google: "t65cIjTeDxVQIcpGy_vwKe5O8W1cElYv3pz_KfhUfBg",
-  },
 
   metadataBase: new URL("https://www.internalaccountants.com"),
   title: {
@@ -15,7 +12,7 @@ export const metadata = {
   },
   description: "Internal Accountants delivers expert bookkeeping, international compliance, cash flow forecasting, and budgeting services for growing businesses worldwide.",
   verification: {
-    google: "t65cIjTeDxVQIcpGy_vwKe5O8W1cElYv3pz_KfhUfBg",
+    google: "E3FeGCwfCR1bbu7WMzb326Sgws9aWwSMcdGt8EbU1Dw",
   },
   openGraph: {
     title: "Internal Accountants | Global Bookkeeping, Accounting & Compliance",
